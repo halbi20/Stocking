@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Cadastro</title>
+    <link rel="stylesheet" href="styleCadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">   
+</head>
+<body>
+    <div id="content">
+        <div id="cartaoCadastro">
+            <div id="cabecalhoCartaoCadastro" class="centralizarConteudo"> <span id="MensagemCadastro">Cadastro</span> </div>
+            <div class="campoFormulario centralizarConteudo" >
+                <span>Usuário</span>
+                <input type="text" name="usuario" id="usuario" placeholder="Insira seu novo nome de usuário" required>
+            </div>
+            <div class="campoFormulario centralizarConteudo">
+                <span>Senha</span>
+                <input type="text" name="senha" id="senha" placeholder="Insira sua nova senha" required>
+            </div>
+            <div class="campoBtn centralizarConteudo">
+                <button id="botaoCadastro"><span>Cadastrar</span></button>
+            </div>
+            <div class="campoCadastro centralizarConteudo"> <span>Ja Possui uma conta? <a href="../Index.html">Acessar Conta</a></span> </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <script src="./pagCadastro.js"></script>
+</body>
+</html>

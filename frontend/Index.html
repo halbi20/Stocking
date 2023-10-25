@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">   
+</head>
+<body>
+    <div id="content">
+        <div id="cartaoLogin">
+            <div id="cabecalhoCartaoLogin" class="centralizarConteudo"> <span id="MensagemLogin">Login</span> </div>
+            <div class="campoFormulario centralizarConteudo" >
+                <span>Usuário</span>
+                <input type="text" name="usuario" id="usuario" placeholder="Insira seu usuário" required>
+            </div>
+            <div class="campoFormulario centralizarConteudo">
+                <span>Senha</span>
+                <input type="text" name="senha" id="senha" placeholder="Insira sua senha" required>
+            </div>
+            <div class="campoBtn centralizarConteudo">
+                <button id="botaologin"><span>Entrar</span></button>
+            </div>
+            <div class="campoCadastro centralizarConteudo"> <span>Novo Usuário? <a href="./paginaDeCadastro/PagDeCadastro.html">Criar Conta</a></span> </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <script src="loginPage.js"></script>
+</body>
+</html>
