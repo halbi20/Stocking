@@ -4,7 +4,6 @@ const botaoLogin = document.getElementById('botaologin')
 const ContainerMensagemLogin = document.getElementById('cabecalhoCartaoLogin')
 const MensagemLogin = document.getElementById('MensagemLogin')
 
-
 botaoLogin.addEventListener('click', login)
 
 function login() {
@@ -18,6 +17,11 @@ function login() {
                console.log('LOGIN SUCEDIDO');
                ContainerMensagemLogin.style.background = 'green';
                MensagemLogin.innerText = 'Login Bem Sucedido'
+               const userId = result.data.possivelUsuario.Id
+               console.log(userId);
+               vaiPraTelaInicial(userId)
+
+                localStorage.setItem('idUsuario',userId)
             }
         )
         .catch(
@@ -29,5 +33,13 @@ function login() {
         )
     }
 }
+
+function vaiPraTelaInicial(idUsuario){
+    window.open('/telaInicial/' + idUsuario)
+    window.close()
+    
+}
+
+
 
 

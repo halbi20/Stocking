@@ -4,7 +4,7 @@ class ControllersUSuarios {
     login = async (req, res) => {
         const login = req.body;
 
-        const possivelUsuario = await Usuarios.findAll(
+        const possivelUsuario = await Usuarios.findOne(
             {
                 where: {
                     Login: login.Login,
@@ -15,15 +15,19 @@ class ControllersUSuarios {
         if (!possivelUsuario || possivelUsuario.length < 1) {
             return res.status(401).json({message: 'ACESSO INVÁLIDO. POR FAVOR, INFORME CORRETAMENTE SUAS CREDENCIAIS'})
         }
-        return res.status(200).json({})
+        return res.status(200).json({possivelUsuario})
     }
     cadastroUsuario = async (requisicao, resposta) => {
         const usuarioSalvo = await Usuarios.create(requisicao.body) 
-        return resposta.status(200).json(usuarioSalvo)
+        return resposta.status(200).json({usuarioSalvo})
     }
     
     obtemTodosOsUsuarios = async (requisicao, resposta) => {
         return resposta.status(200).json(await Usuarios.findAll())
+    }
+    paginaInicial = (req,res) => {
+        res.set('Content-Type', 'text/html')
+        res.sendFile('C:/Users/Heitor/Desktop/Projeto/frontend/PaginaInicial/pagInicial.html')
     }
 }
 

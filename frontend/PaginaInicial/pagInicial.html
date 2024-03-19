@@ -4,12 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Inicial</title>
-    <link rel="stylesheet" href="stylePagInicial.css">
+    <link rel="stylesheet" type="text/css" href="/PaginaInicial/stylePagInicial.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">  
 </head>
 <body>
-    
+    <nav>
+        <div class="divTopo">
+            <div class="nameText">
+                <h1>Nome Do Site</h1>
+            </div>
+            <div class="divUser">
+                <button id="btnDeslogar">Deslogar</button>
+            </div>
+        </div>
+    </nav>
+    <div class="divNovoProduto">
+        <button id="newProduct">Novo Produto</button>
+        <!-- <input type="text" id="searchBar"> -->
+    </div>
+    <div class="divListagemProdutos">
+        <ul id="listaProdutos">
+            <li>
+                <div class="divTitulos">
+                    <span>Nome</span>
+                    <span>Preço de Custo</span>
+                    <span>Preço de Venda</span>
+                    <span>Estoque</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <script src="/PaginaInicial/pagInicialJS.js"></script>
 </body>
 </html>

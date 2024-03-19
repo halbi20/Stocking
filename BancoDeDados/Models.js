@@ -42,9 +42,13 @@ const Produtos = sequelize.define('Produtos', {
             model: 'Usuarios',
             key: 'Id'
         }
+    },
+    Estoque: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
     }
 })
-
 
 async function gerarModelUsuarios(){
     await Usuarios.sync();
@@ -54,7 +58,7 @@ async function gerarModelProdutos(){
     await Produtos.sync();
 }
 
-sequelize.sync()
+sequelize.sync();
 
 gerarModelUsuarios();
 gerarModelProdutos();

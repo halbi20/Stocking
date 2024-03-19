@@ -25,6 +25,11 @@ class ControllersProdutos {
         return res.status(200).json(ProdutosConsultados);
     }
 
+    ConsultarProdutosPeloId = async (req,res) =>{
+        const produtoId = req.params.id
+        return res.status(200).json(await Produtos.findByPk(produtoId));
+    }
+
     ConsultarProdutosDoUsuario = async (req,res) =>{
         let ProdutosConsultados = []
 
@@ -62,6 +67,11 @@ class ControllersProdutos {
         }
 
         return res.status(200).json(await ProdutoModel.update(Produto));
+    }
+
+    telaEdicao = (req,res) => {
+        res.set('Content-Type', 'text/html')
+        res.sendFile('C:/Users/Heitor/Desktop/Projeto/frontend/PagEditProduto/EditProduto.html')
     }
 }
 

@@ -24,7 +24,7 @@ body{
     align-items: center;
     justify-content: space-evenly;
     height: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .nameText{
@@ -41,17 +41,22 @@ body{
     width: 15vw;
 }
 
-/* div Novo Produto */
+/* Div Edit Produto */
 
-.divNovoProduto{
+.DivEditProduto{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    height: 60px;
+    flex-direction: column;
+    width: 96vw;
+    height: 80vh;
+    margin: auto;
+    background-color: #5c636e;
+    border-radius: 10px;   
 }
 
-.divNovoProduto > button{
-    background-color: #f8b500;
+.DivEditProduto > h1{
+    display: flex;
+    margin: 10px 10px 30px 10px;
 }
 
 input{
@@ -62,7 +67,7 @@ input{
     outline: none;
     transition: border-color 0.3s ease-in-out;
     margin: 1rem;
-    width: 35vw;
+    width: 50vw;
 }
 
 input:focus {
@@ -85,50 +90,9 @@ button:hover {
     background-color: #ca9400;
 }
 
-
-
-/* LISTAGEM PRODUTOS */
-
-ul{
-    list-style-type: none;
-}
-
-.divListagemProdutos{
-    background-color: #5c636e;
-    border-radius: 10px;
-    width: 97vw;
-    height: auto;
-    margin: 30px auto;
+.linha {
     display: flex;
-    transition: border-color 0.3s ease-in-out;
-    border: 1px solid #393e46;
+    width: 50vw;
+    justify-content: space-evenly;
+    margin: 20px;
 }
-
-.divListagemProdutos:hover{
-    border-color: #f8b500;
-}
-
-#listaProdutos{
-    width: 100vw;
-    padding: 0;
-}
-
-.divTitulos{
-    display: grid;
-    grid-template-columns: 5fr 3fr 3fr 2fr 1fr;
-    background-color: #f8b500;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-li{
-    padding: 10px;
-}
-
-.cardProduto{
-    display: grid;
-    grid-template-columns: 5fr 3fr 3fr 2fr 1fr;
-    padding: 10px;
-}
-
-
