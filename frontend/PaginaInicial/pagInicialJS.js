@@ -78,6 +78,6 @@ function criarListagem(produto) {
 
 
 function irPraTelaEditar(idDoProduto){
-    window.open('http://localhost:4000/EditProduto/' + idDoProduto)
+    window.open('http://localhost:4000/edit-produto/' + idDoProduto)
     window.close()
 }

@@ -73,6 +73,16 @@ class ControllersProdutos {
         res.set('Content-Type', 'text/html')
         res.sendFile('C:/Users/Heitor/Desktop/Projeto/frontend/PagEditProduto/EditProduto.html')
     }
+
+    deletarProdutos = (req,res) =>{
+        const produtoId = req.params.id
+        Produtos.destroy({
+            where: {Id: produtoId}
+        }).then(() => {
+            res.status(204).json({message: 'PRODUTO DELETADO COM SUCESSO'})
+        }).catch((error) => console.log(error))
+        
+    }
 }
 
 module.exports = new ControllersProdutos     

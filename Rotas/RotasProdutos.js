@@ -9,7 +9,8 @@ class RotasProdutos {
         app.get('/consultar-produto-peloid/:id', express.urlencoded({extended: false}), controllers.ConsultarProdutosPeloId)
         app.get('/consultar-produtos-usuario/:usuarioId', express.urlencoded({extended:false}), controllers.ConsultarProdutosDoUsuario)
         app.put('/atualizar', express.urlencoded({extended: false}), controllers.AtualizarProduto)
-        app.get('/EditProduto/:id', express.urlencoded({extended:false}), controllers.telaEdicao)
+        app.get('/edit-produto/:id', express.urlencoded({extended:false}), controllers.telaEdicao)
+        app.delete('/delete-produto/:id', express.urlencoded({extended:false}), controllers.deletarProdutos)
     }
 }
 
