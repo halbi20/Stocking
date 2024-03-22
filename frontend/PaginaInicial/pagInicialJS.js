@@ -55,22 +55,38 @@ function criarListagem(produto) {
     const precoDeCustoProduto = document.createElement('span')
     const precoDeVendaProduto = document.createElement('span')
     const estoqueProduto = document.createElement('span')
+
+
     const btnEditar = document.createElement('button')
     btnEditar.innerHTML = "Editar"
     const idProduto = produto.Id
     btnEditar.addEventListener('click', function(){
         irPraTelaEditar(idProduto)
+        
     })
+
+    const produtoNome = produto.Nome
+    const divConteinerBtnExcluir = document.createElement('div')
+    divConteinerBtnExcluir.className = "conteinerBtnExcluir"
+    const btnExcluir = document.createElement('i')
+    btnExcluir.className = "gg-trash"
+    btnExcluir.addEventListener('click', function(){
+        areYouSureBoutThat(produtoNome, idProduto)
+    })
+    divConteinerBtnExcluir.appendChild(btnExcluir)
+
+
 
     cardProduto.appendChild(nomeProduto)
     cardProduto.appendChild(precoDeCustoProduto)
     cardProduto.appendChild(precoDeVendaProduto)
     cardProduto.appendChild(estoqueProduto)
     cardProduto.appendChild(btnEditar)
+    cardProduto.appendChild(divConteinerBtnExcluir)
 
 
 
-    nomeProduto.innerText = produto.Nome
+    nomeProduto.innerText = produtoNome
     precoDeCustoProduto.innerHTML = ("R$" + produto.PrecoDeCusto)
     precoDeVendaProduto.innerHTML = ("R$" + produto.PrecoDeVenda)
     estoqueProduto.innerHTML = produto.Estoque
@@ -80,4 +96,22 @@ function criarListagem(produto) {
 function irPraTelaEditar(idDoProduto){
     window.open('http://localhost:4000/edit-produto/' + idDoProduto)
     window.close()
+}
+
+function areYouSureBoutThat(nomeProduto, idDoProduto){
+    var confirmar = confirm("tem certeza que deseja deletar o produto: " + nomeProduto + "?")
+    if(confirmar){
+        deletarProduto(idDoProduto)
+        console.log("Produto deletado com sucesso");
+    }
+    else{
+        console.log("Produto não deletado");
+    }
+}
+
+function deletarProduto(idDoProduto){
+    axios.delete('/delete-produto/' + idDoProduto)
+    .then(() =>{
+        location.reload()})
+    .catch((error) => {console.log(error)})
 }

@@ -71,7 +71,7 @@ class ControllersProdutos {
 
     telaEdicao = (req,res) => {
         res.set('Content-Type', 'text/html')
-        res.sendFile('C:/Users/Heitor/Desktop/Projeto/frontend/PagEditProduto/EditProduto.html')
+        res.sendFile('C:/Users/Heitor/Desktop/Stoking/frontend/PagEditProduto/EditProduto.html')
     }
 
     deletarProdutos = (req,res) =>{

@@ -4,6 +4,8 @@
 	3 - #f8b500; 
 */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/trash.css');
+
 
 *{
     font-family: 'Poppins', sans-serif;
@@ -115,7 +117,7 @@ ul{
 
 .divTitulos{
     display: grid;
-    grid-template-columns: 5fr 3fr 3fr 2fr 1fr;
+    grid-template-columns: 5fr 3fr 3fr 2fr 1fr  1fr;
     background-color: #f8b500;
     padding: 10px;
     border-radius: 10px;
@@ -127,8 +129,17 @@ li{
 
 .cardProduto{
     display: grid;
-    grid-template-columns: 5fr 3fr 3fr 2fr 1fr;
+    grid-template-columns: 5fr 3fr 3fr 2fr 1fr 1fr;
     padding: 10px;
+}
+
+.conteinerBtnExcluir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    border-radius: 5px;
+    margin: 0px 10px;   
 }
 
 

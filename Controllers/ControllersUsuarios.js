@@ -27,7 +27,7 @@ class ControllersUSuarios {
     }
     paginaInicial = (req,res) => {
         res.set('Content-Type', 'text/html')
-        res.sendFile('C:/Users/Heitor/Desktop/Projeto/frontend/PaginaInicial/pagInicial.html')
+        res.sendFile('C:/Users/Heitor/Desktop/Stoking/frontend/PaginaInicial/pagInicial.html')
     }
 }
 
