@@ -2,6 +2,7 @@ const inputNome = document.getElementById('nome')
 const inputPrecoDeCusto = document.getElementById('precoDeCusto')
 const inputPrecoDeVenda = document.getElementById('precoDeVenda')
 const inputEstoque = document.getElementById('estoque')
+const inputCodigoDeBarras = document.getElementById('codigoDeBarras')
 const buttonSalvar = document.getElementById('btnSalvar')
 const buttonCancelar = document.getElementById('btnCancelar')
 const userId = localStorage.getItem('idUsuario')
@@ -10,7 +11,7 @@ let idDoProduto = null
 
 window.onload = () =>{
     const urlDoNavegador = window.location.href;
-    const idDoProdutoVindoDaUrl = urlDoNavegador.split('EditProduto/')[1]
+    const idDoProdutoVindoDaUrl = urlDoNavegador.split('edit-produto/')[1]
 
     if (idDoProdutoVindoDaUrl){
         idDoProduto = idDoProdutoVindoDaUrl
@@ -22,6 +23,7 @@ window.onload = () =>{
                 inputPrecoDeCusto.value = produtoRes.PrecoDeCusto
                 inputPrecoDeVenda.value = produtoRes.PrecoDeVenda
                 inputEstoque.value = produtoRes.Estoque
+                inputCodigoDeBarras.value = produtoRes.CodigoDeBarras
             }
         )
         .catch (
@@ -42,10 +44,11 @@ function salvarProduto(){
     const precoDeCusto = inputPrecoDeCusto.value
     const precoDeVenda = inputPrecoDeVenda.value
     const estoque = inputEstoque.value
+    const codigoDeBarras = inputCodigoDeBarras.value
     const urlDoNavegador = window.location.href;
-    const idDoProdutoVindoDaUrl = urlDoNavegador.split('EditProduto/')[1]
+    const idDoProdutoVindoDaUrl = urlDoNavegador.split('edit-produto/')[1]
 
-    axios.put('/atualizar', {Id: idDoProdutoVindoDaUrl, Nome: nome, PrecoDeCusto: precoDeCusto, PrecoDeVenda: precoDeVenda, Estoque: estoque, UsuarioId: userId})
+    axios.put('/atualizar', {Id: idDoProdutoVindoDaUrl, Nome: nome, PrecoDeCusto: precoDeCusto, PrecoDeVenda: precoDeVenda, Estoque: estoque, UsuarioId: userId, CodigoDeBarras: codigoDeBarras})
     .then(
         result => {
             console.log("Produto Editado com sucesso");

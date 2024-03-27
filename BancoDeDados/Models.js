@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-const {sequelize} = require('./conectBD')
+const {sequelize} = require('./conectBD.js')
 
 const Usuarios = sequelize.define('Usuarios', {
     Id: {
@@ -47,7 +47,10 @@ const Produtos = sequelize.define('Produtos', {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0,
-    }
+    },
+    CodigoDeBarras: {
+        type: Sequelize.INTEGER,
+    },
 })
 
 async function gerarModelUsuarios(){
@@ -57,6 +60,7 @@ async function gerarModelUsuarios(){
 async function gerarModelProdutos(){
     await Produtos.sync();
 }
+// { alter:true }
 
 sequelize.sync();
 
