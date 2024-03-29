@@ -18,8 +18,34 @@ function AbrirPagCadastroProduto(){
     window.close()
 }
 
-// LISTAGEM PRODUTOS
+// INPUT E BTN BUSCAR PRODUTOS
 
+const inputBuscarProdutos = document.getElementById('searchInput')
+const btnBuscarProdutos = document.getElementById('searchBtn')
+
+btnBuscarProdutos.addEventListener('click',ConsultarProdutosPeloNomeCodigo)
+
+function ConsultarProdutosPeloNomeCodigo(){
+    const valueInputBuscarProdutos = inputBuscarProdutos.value
+    const urlDoNavegador = window.location.href;
+    const idDoUsuarioVindoDaURL = urlDoNavegador.split('telaInicial/')[1]
+
+    axios.get('/consultar-produtos-usuario-por-nomecodigo/' + idDoUsuarioVindoDaURL + '/' + valueInputBuscarProdutos)
+    .then(res =>{
+        limparListagem()
+        this.produtos = res.data
+        this.produtos.forEach(produto =>
+            criarListagem(produto))
+    })
+    .catch(error =>{
+        console.log(error);
+    })
+}
+
+
+
+// LISTAGEM PRODUTOS
+const nDeletaNaLimparListagem = document.getElementById('nDeletaNaLimparListagem')
 const listaProdutos = document.getElementById('listaProdutos')
 
 
@@ -114,4 +140,8 @@ function deletarProduto(idDoProduto){
     .then(() =>{
         location.reload()})
     .catch((error) => {console.log(error)})
+}
+
+function limparListagem(){
+    listaProdutos.innerHTML = ("")
 }

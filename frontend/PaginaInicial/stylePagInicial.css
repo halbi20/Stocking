@@ -5,7 +5,7 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 @import url('https://unpkg.com/css.gg@2.0.0/icons/css/trash.css');
-
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/search.css');
 
 *{
     font-family: 'Poppins', sans-serif;
@@ -43,16 +43,16 @@ body{
     width: 15vw;
 }
 
-/* div Novo Produto */
+/* div Container Funcionalidades */
 
-.divNovoProduto{
+.divContainerFuncionalidades{
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 60px;
 }
 
-.divNovoProduto > button{
+.divContainerFuncionalidades > button{
     background-color: #f8b500;
 }
 
@@ -63,8 +63,9 @@ input{
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s ease-in-out;
-    margin: 1rem;
+    margin: 1rem 0px 1rem 1rem;
     width: 35vw;
+    height: 45px;
 }
 
 input:focus {
@@ -87,6 +88,18 @@ button:hover {
     background-color: #ca9400;
 }
 
+.divContainerSearchProducts{
+    display: flex;
+    align-items: center;
+    height: 45px;
+}
+
+#searchBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+}
 
 
 /* LISTAGEM PRODUTOS */
@@ -102,6 +115,8 @@ ul{
     height: auto;
     margin: 30px auto;
     display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
     transition: border-color 0.3s ease-in-out;
     border: 1px solid #393e46;
 }
@@ -125,6 +140,7 @@ ul{
 
 li{
     padding: 10px;
+    list-style-type: none;
 }
 
 .cardProduto{
@@ -142,4 +158,7 @@ li{
     margin: 0px 10px;   
 }
 
+#nDeletaNaLimparListagem{
+    width: 100vw;
+}
 

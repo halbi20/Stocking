@@ -1,5 +1,6 @@
 const {Produtos, Usuarios} = require('../BancoDeDados/Models')
 const RotasProdutos = require('../Rotas/RotasProdutos')
+const { Op } = require('sequelize')
 
 class ControllersProdutos {
     CadastroProduto = async (req, res) => {
@@ -30,6 +31,29 @@ class ControllersProdutos {
         return res.status(200).json(await Produtos.findByPk(produtoId));
     }
 
+    ConsultarProdutosPeloNomeCodigo = async (req,res) =>{
+        let ProdutosConsultados = []
+
+        try{
+            const usuarioId = req.params.usuarioId;
+            const produtoNomeCodigo = req.params.nomeCodigo;
+            
+            ProdutosConsultados = await Produtos.findAll({
+                include: [{
+                    model: Usuarios,
+                    where: {Id: usuarioId}
+                }],
+                where:{
+                    [Op.or]:[
+                    {Nome: produtoNomeCodigo},
+                    {CodigoDeBarras: produtoNomeCodigo}
+                    ]
+                }
+            })
+        }   catch(error) {console.log(error)}
+        return res.status(200).json(ProdutosConsultados);
+    }
+ 
     ConsultarProdutosDoUsuario = async (req,res) =>{
         let ProdutosConsultados = []
 

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">  
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/trash.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/search.css' rel='stylesheet'>
 </head>
 <body>
     <nav>
@@ -21,20 +22,23 @@
             </div>
         </div>
     </nav>
-    <div class="divNovoProduto">
+    <div class="divContainerFuncionalidades">
         <button id="newProduct">Novo Produto</button>
-        <!-- <input type="text" id="searchBar"> -->
+        <div class="divContainerSearchProducts">
+            <input type="text" id="searchInput" placeholder="Insira o nome do produto">
+            <button id="searchBtn"><i class="gg-search"></i></button>
+        </div>
     </div>
     <div class="divListagemProdutos">
+        <li id="nDeletaNaLimparListagem">
+            <div class="divTitulos">
+                <span>Nome</span>
+                <span>Preço de Custo</span>
+                <span>Preço de Venda</span>
+                <span>Estoque</span>
+            </div>
+        </li>
         <ul id="listaProdutos">
-            <li>
-                <div class="divTitulos">
-                    <span>Nome</span>
-                    <span>Preço de Custo</span>
-                    <span>Preço de Venda</span>
-                    <span>Estoque</span>
-                </div>
-            </li>
         </ul>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
